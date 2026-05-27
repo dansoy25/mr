@@ -1239,6 +1239,155 @@ p { margin: 0 0 var(--sp-md); }
 }
 
 /* ============================================================
+   CREDENTIALS & TRAINING CERTIFICATES SECTION
+   ============================================================ */
+.section-credentials {
+  background: var(--bg-alt);
+  padding: var(--sp-4xl) 0;
+}
+
+.section-subhead {
+  margin: var(--sp-3xl) 0 var(--sp-2xl);
+  text-align: center;
+}
+
+.section-subhead h3 {
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--fg-heading);
+  margin: 0 0 var(--sp-md);
+}
+
+.section-subhead p {
+  color: var(--c-text-muted);
+  font-size: 16px;
+}
+
+/* Credentials highlight cards */
+.credentials-highlight {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2xl);
+  margin: var(--sp-3xl) 0;
+}
+
+.cred-card {
+  background: var(--bg-surface);
+  border: 2px solid var(--border-mid);
+  border-radius: var(--r-card);
+  padding: var(--sp-2xl);
+  text-align: center;
+  transition: all var(--ease-base);
+  box-shadow: var(--sh-subtle);
+}
+
+.cred-card:hover {
+  border-color: var(--c-accent);
+  box-shadow: var(--sh-medium);
+  transform: translateY(-4px);
+}
+
+.cred-icon {
+  font-size: 48px;
+  margin-bottom: var(--sp-md);
+  display: block;
+}
+
+.cred-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--fg-heading);
+  margin: 0 0 var(--sp-sm);
+}
+
+.cred-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--c-accent);
+  margin: var(--sp-md) 0 var(--sp-sm);
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+}
+
+.cred-label {
+  font-size: 14px;
+  color: var(--c-text-muted);
+  margin: 0;
+}
+
+/* Certificate grid */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--sp-2xl);
+  margin: var(--sp-3xl) 0;
+}
+
+.cert-item {
+  border-radius: var(--r-card);
+  overflow: hidden;
+  box-shadow: var(--sh-medium);
+  transition: all var(--ease-base);
+  background: var(--bg-surface);
+}
+
+.cert-item:hover {
+  box-shadow: var(--sh-elevated);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.cert-image-wrap {
+  position: relative;
+  width: 100%;
+  padding-bottom: 140%;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+
+.cert-image-wrap img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform var(--ease-smooth);
+}
+
+.cert-item:hover .cert-image-wrap img {
+  transform: scale(1.05);
+}
+
+/* Responsive: Credentials cards */
+@media (max-width: 900px) {
+  .credentials-highlight {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--sp-xl);
+  }
+}
+
+@media (max-width: 600px) {
+  .credentials-highlight {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+    gap: var(--sp-xl);
+  }
+
+  .cred-card {
+    padding: var(--sp-xl);
+  }
+
+  .section-subhead h3 {
+    font-size: 22px;
+  }
+}
+
+/* ============================================================
    RESPONSIVE — MOBILE
    ============================================================ */
 @media (max-width: 600px) {

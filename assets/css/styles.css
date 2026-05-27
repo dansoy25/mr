@@ -1459,6 +1459,52 @@ p { margin: 0 0 var(--sp-md); }
   .section { padding: 64px 0; }
 }
 
+/* ============ PROJECT PLACEHOLDER CARDS ============ */
+.project-img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img-placeholder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.project-placeholder-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 1.5rem;
+}
+
+.project-placeholder-icon {
+  font-size: 4rem;
+  margin-bottom: 0.5rem;
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.25));
+}
+
+.project-placeholder-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  opacity: 0.95;
+}
+
+.project-card:hover .project-placeholder-icon {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
 /* Reduce motion */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {

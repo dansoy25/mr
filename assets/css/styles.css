@@ -1359,6 +1359,50 @@ p { margin: 0 0 var(--sp-md); }
   transform: scale(1.05);
 }
 
+/* Certificate placeholder styling */
+.cert-placeholder .cert-image-wrap {
+  background: var(--grad-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cert-placeholder-content {
+  text-align: center;
+  color: var(--c-white);
+}
+
+.cert-placeholder-icon {
+  font-size: 56px;
+  margin-bottom: var(--sp-lg);
+  display: block;
+}
+
+.cert-placeholder-text {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+  color: var(--c-white);
+}
+
+.cert-note {
+  font-size: 12px;
+  color: var(--c-text-muted);
+  text-align: center;
+  padding: var(--sp-md);
+  margin: 0;
+  font-style: italic;
+}
+
+.cert-placeholder:hover {
+  box-shadow: var(--sh-elevated);
+  transform: translateY(-8px) scale(1.02);
+}
+
+.cert-placeholder:hover .cert-image-wrap {
+  background: var(--grad-accent);
+}
+
 /* Responsive: Credentials cards */
 @media (max-width: 900px) {
   .credentials-highlight {

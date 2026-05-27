@@ -624,73 +624,28 @@ p { margin: 0 0 var(--sp-md); }
 .founder-card p { color: rgba(255, 255, 255, 0.92); font-size: 14px; line-height: 1.7; margin: 0; }
 
 .about-media-card {
-  /* Gradient fallback if video can't load */
-  background: var(--grad-accent);
+  background: var(--bg-surface);
   border-radius: var(--r-card);
-  aspect-ratio: 4 / 5;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;   /* pin content to bottom */
-  color: #fff;
-  padding: 0;                  /* padding handled by .amc-content */
   box-shadow: var(--sh-elevated);
-  position: relative;
   overflow: hidden;
+  border: 1px solid var(--border-mid);
 }
 
-/* Background video */
+/* Video panel (top of card) */
+.amc-video-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #000;
+}
 .amc-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  z-index: 0;
-  pointer-events: none;
-}
-
-/* Dark blue gradient overlay — strong at bottom for readability */
-.about-media-card::before {
-  content: "";
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(0, 10, 40, 0.93) 0%,
-    rgba(0, 15, 55, 0.72) 40%,
-    rgba(0, 10, 35, 0.35) 70%,
-    transparent 100%
-  );
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* Subtle shimmer sweep over the video (very light) */
-.about-media-card::after {
-  content: "";
-  position: absolute;
-  top: -20%; left: 0;
-  width: 100%; height: 140%;
-  background: linear-gradient(
-    110deg,
-    transparent 30%,
-    rgba(255, 255, 255, 0.04) 42%,
-    rgba(255, 255, 255, 0.10) 50%,
-    rgba(255, 255, 255, 0.04) 58%,
-    transparent 70%
-  );
-  animation: shimmerSweep 8s linear infinite;
-  animation-delay: 2s;
-  z-index: 2;
-  pointer-events: none;
-}
-
-/* Content wrapper — sits above video + overlays */
-.amc-content {
-  position: relative;
-  z-index: 3;
-  padding: var(--sp-xl) var(--sp-xl);
-  display: flex;
-  flex-direction: column;
-  gap: var(--sp-lg);
-  width: 100%;
+  display: block;
 }
 
 /* Mute / unmute button */
@@ -728,68 +683,40 @@ p { margin: 0 0 var(--sp-md); }
 .amc-mute-btn.is-unmuted .icon-muted   { display: none; }
 .amc-mute-btn.is-unmuted .icon-unmuted { display: block; }
 
-.amc-header {
+/* Footer — logo + company name below the video */
+.amc-footer {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: var(--sp-sm);
+  padding: var(--sp-2xl) var(--sp-xl);
+  background: var(--bg-surface);
 }
 .amc-logo {
-  width: 80px; height: 80px;
+  width: 84px; height: 84px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
   padding: 6px;
-  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25), 0 8px 24px rgba(0, 0, 0, 0.3);
-  margin-bottom: 4px;
+  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.10), var(--sh-medium);
+  margin-bottom: var(--sp-xs);
 }
 .amc-company {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 900;
   line-height: 1.25;
   margin: 0;
   letter-spacing: -0.3px;
+  color: var(--c-text);
 }
 .amc-role {
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  opacity: 0.8;
+  color: var(--c-primary);
   margin: 0;
-}
-.amc-sep {
-  height: 1px;
-  background: rgba(255, 255, 255, 0.25);
-}
-.amc-list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-.amc-list li {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: var(--sp-sm);
-}
-.amc-k {
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  opacity: 0.72;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-.amc-v {
-  font-weight: 700;
-  font-size: 13px;
-  text-align: right;
 }
 
 /* ============================================================
@@ -1204,7 +1131,7 @@ p { margin: 0 0 var(--sp-md); }
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(3, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: var(--sp-2xl); }
-  .about-media-card { aspect-ratio: 16 / 9; }
+  .amc-video-wrap { aspect-ratio: 16 / 9; }
   .contact-grid { grid-template-columns: 1fr; gap: var(--sp-2xl); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: var(--sp-xl); }
 }

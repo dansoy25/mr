@@ -204,25 +204,23 @@
 
             <aside class="about-media reveal" data-delay="200">
               <div class="about-media-card">
-                <!-- Video panel (top) -->
-                <div class="amc-video-wrap">
-                  <video class="amc-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
-                    <source src="assets/video/about-bg.mp4" type="video/mp4">
-                  </video>
-                  <!-- Mute / unmute toggle -->
-                  <button class="amc-mute-btn" id="amcMuteBtn" aria-label="Unmute video" title="Unmute video">
-                    <!-- Muted icon (default) -->
-                    <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18L16.45 12.63C16.48 12.43 16.5 12.22 16.5 12ZM19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77V5.29C16.89 6.16 19 8.83 19 12ZM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25A6.995 6.995 0 0 1 14 18.7v2.06a8.994 8.994 0 0 0 3.68-1.74l1.31 1.31L20.27 19 12 10.73 4.27 3ZM12 4 9.91 6.09 12 8.18V4Z"/>
-                    </svg>
-                    <!-- Unmuted icon (shown when active) -->
-                    <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                      <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
-                    </svg>
-                  </button>
-                </div>
-                <!-- Footer with logo + company name (below video) -->
-                <div class="amc-footer">
+                <!-- Background video fills the entire card -->
+                <video class="amc-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                  <source src="assets/video/about-bg.mp4" type="video/mp4">
+                </video>
+                <!-- Mute / unmute toggle -->
+                <button class="amc-mute-btn" id="amcMuteBtn" aria-label="Unmute video" title="Unmute video">
+                  <!-- Muted icon (default) -->
+                  <svg class="icon-muted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M16.5 12A4.5 4.5 0 0 0 14 7.97V10.18L16.45 12.63C16.48 12.43 16.5 12.22 16.5 12ZM19 12c0 .94-.2 1.82-.54 2.64l1.51 1.51C20.63 14.91 21 13.5 21 12c0-4.28-2.99-7.86-7-8.77V5.29C16.89 6.16 19 8.83 19 12ZM4.27 3 3 4.27 7.73 9H3v6h4l5 5v-6.73l4.25 4.25A6.995 6.995 0 0 1 14 18.7v2.06a8.994 8.994 0 0 0 3.68-1.74l1.31 1.31L20.27 19 12 10.73 4.27 3ZM12 4 9.91 6.09 12 8.18V4Z"/>
+                  </svg>
+                  <!-- Unmuted icon (shown when active) -->
+                  <svg class="icon-unmuted" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"/>
+                  </svg>
+                </button>
+                <!-- Logo + name overlay, pinned to bottom-center -->
+                <div class="amc-overlay">
                   <img src="assets/images/logo.jpg" alt="M&R MECH DEVELOPMENT Inc. logo" class="amc-logo" />
                   <p class="amc-company">M&amp;R MECH DEVELOPMENT Inc.</p>
                   <p class="amc-role">Registered Engineering Contractor</p>

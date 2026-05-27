@@ -624,28 +624,21 @@ p { margin: 0 0 var(--sp-md); }
 .founder-card p { color: rgba(255, 255, 255, 0.92); font-size: 14px; line-height: 1.7; margin: 0; }
 
 .about-media-card {
-  background: var(--bg-surface);
+  position: relative;
+  background: #000;            /* fallback */
   border-radius: var(--r-card);
-  display: flex;
-  flex-direction: column;
+  aspect-ratio: 4 / 5;
   box-shadow: var(--sh-elevated);
   overflow: hidden;
-  border: 1px solid var(--border-mid);
 }
 
-/* Video panel (top of card) */
-.amc-video-wrap {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  background: #000;
-}
+/* Background video fills the card */
 .amc-video {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: cover;
   display: block;
+  z-index: 0;
 }
 
 /* Mute / unmute button */
@@ -683,23 +676,31 @@ p { margin: 0 0 var(--sp-md); }
 .amc-mute-btn.is-unmuted .icon-muted   { display: none; }
 .amc-mute-btn.is-unmuted .icon-unmuted { display: block; }
 
-/* Footer — logo + company name below the video */
-.amc-footer {
+/* Logo + name overlay — pinned to bottom-center over the video */
+.amc-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: var(--sp-2xl);
+  z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: var(--sp-sm);
-  padding: var(--sp-2xl) var(--sp-xl);
-  background: var(--bg-surface);
+  padding: 0 var(--sp-xl);
+  pointer-events: none;       /* let mute button stay clickable above video */
 }
+
 .amc-logo {
   width: 84px; height: 84px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
   padding: 6px;
-  box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.10), var(--sh-medium);
+  box-shadow:
+    0 0 0 3px rgba(255, 255, 255, 0.35),
+    0 6px 24px rgba(0, 0, 0, 0.55);
   margin-bottom: var(--sp-xs);
 }
 .amc-company {
@@ -708,15 +709,24 @@ p { margin: 0 0 var(--sp-md); }
   line-height: 1.25;
   margin: 0;
   letter-spacing: -0.3px;
-  color: var(--c-text);
+  color: #fff;
+  /* Soft glow halo for readability against any video frame */
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.85),
+    0 2px 8px rgba(0, 0, 0, 0.65),
+    0 0 24px rgba(0, 0, 0, 0.45);
 }
 .amc-role {
   font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 1.8px;
   text-transform: uppercase;
-  color: var(--c-primary);
+  color: #fff;
   margin: 0;
+  opacity: 0.95;
+  text-shadow:
+    0 1px 2px rgba(0, 0, 0, 0.85),
+    0 2px 6px rgba(0, 0, 0, 0.55);
 }
 
 /* ============================================================
@@ -1131,7 +1141,7 @@ p { margin: 0 0 var(--sp-md); }
 @media (max-width: 1024px) {
   .grid-4 { grid-template-columns: repeat(3, 1fr); }
   .about-grid { grid-template-columns: 1fr; gap: var(--sp-2xl); }
-  .amc-video-wrap { aspect-ratio: 16 / 9; }
+  .about-media-card { aspect-ratio: 16 / 9; }
   .contact-grid { grid-template-columns: 1fr; gap: var(--sp-2xl); }
   .footer-inner { grid-template-columns: 1fr 1fr; gap: var(--sp-xl); }
 }

@@ -681,52 +681,59 @@ p { margin: 0 0 var(--sp-md); }
   position: absolute;
   left: 0;
   right: 0;
-  bottom: var(--sp-2xl);
+  bottom: var(--sp-lg);
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: var(--sp-sm);
-  padding: 0 var(--sp-xl);
+  gap: 4px;
+  padding: 0 var(--sp-md);
   pointer-events: none;       /* let mute button stay clickable above video */
 }
 
 .amc-logo {
-  width: 84px; height: 84px;
+  width: 48px; height: 48px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
-  padding: 6px;
+  padding: 3px;
   box-shadow:
-    0 0 0 3px rgba(255, 255, 255, 0.35),
-    0 6px 24px rgba(0, 0, 0, 0.55);
-  margin-bottom: var(--sp-xs);
+    0 0 0 2px rgba(255, 255, 255, 0.3),
+    0 3px 12px rgba(0, 0, 0, 0.5);
+  margin-bottom: 2px;
 }
 .amc-company {
-  font-size: 20px;
-  font-weight: 900;
+  font-size: 13px;
+  font-weight: 800;
   line-height: 1.25;
   margin: 0;
-  letter-spacing: -0.3px;
+  letter-spacing: 0;
   color: #fff;
   /* Soft glow halo for readability against any video frame */
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.85),
-    0 2px 8px rgba(0, 0, 0, 0.65),
-    0 0 24px rgba(0, 0, 0, 0.45);
+    0 2px 6px rgba(0, 0, 0, 0.55);
 }
 .amc-role {
-  font-size: 11px;
+  font-size: 9px;
   font-weight: 700;
-  letter-spacing: 1.8px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: #fff;
   margin: 0;
-  opacity: 0.95;
+  opacity: 0.9;
   text-shadow:
     0 1px 2px rgba(0, 0, 0, 0.85),
-    0 2px 6px rgba(0, 0, 0, 0.55);
+    0 1px 4px rgba(0, 0, 0, 0.45);
+}
+
+/* Even smaller on phones */
+@media (max-width: 600px) {
+  .amc-overlay { bottom: var(--sp-md); gap: 2px; }
+  .amc-logo { width: 36px; height: 36px; padding: 2px; }
+  .amc-company { font-size: 11px; }
+  .amc-role { font-size: 8px; letter-spacing: 1px; }
 }
 
 /* ============================================================

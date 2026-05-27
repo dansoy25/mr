@@ -1659,6 +1659,21 @@ p { margin: 0 0 var(--sp-md); }
   font-size: 16px;
 }
 
+/* Make the outline button readable on this light bg — by default it has white text */
+.cred-see-also .btn-secondary-outline {
+  background: #fff;
+  color: var(--c-primary);
+  border-color: var(--c-primary);
+  box-shadow: var(--sh-subtle);
+}
+.cred-see-also .btn-secondary-outline:hover {
+  background: var(--c-primary);
+  color: #fff;
+  border-color: var(--c-primary);
+  box-shadow: var(--sh-medium);
+  transform: translateY(-2px);
+}
+
 /* ============ RESPONSIVE: multi-page additions ============ */
 @media (max-width: 900px) {
   .credentials-teasers {

@@ -676,64 +676,63 @@ p { margin: 0 0 var(--sp-md); }
 .amc-mute-btn.is-unmuted .icon-muted   { display: none; }
 .amc-mute-btn.is-unmuted .icon-unmuted { display: block; }
 
-/* Logo + name overlay — pinned to bottom-center over the video */
+/* Logo + name overlay — discreet watermark at the bottom of the video */
 .amc-overlay {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: var(--sp-lg);
+  bottom: 10px;
   z-index: 3;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  gap: 4px;
-  padding: 0 var(--sp-md);
+  gap: 1px;
+  padding: 0 var(--sp-sm);
   pointer-events: none;       /* let mute button stay clickable above video */
 }
 
 .amc-logo {
-  width: 48px; height: 48px;
+  width: 22px; height: 22px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
-  padding: 3px;
+  padding: 1px;
   box-shadow:
-    0 0 0 2px rgba(255, 255, 255, 0.3),
-    0 3px 12px rgba(0, 0, 0, 0.5);
-  margin-bottom: 2px;
+    0 0 0 1px rgba(255, 255, 255, 0.35),
+    0 2px 6px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1px;
 }
 .amc-company {
-  font-size: 13px;
+  font-size: 8px;
   font-weight: 800;
-  line-height: 1.25;
+  line-height: 1.2;
   margin: 0;
   letter-spacing: 0;
   color: #fff;
-  /* Soft glow halo for readability against any video frame */
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.85),
-    0 2px 6px rgba(0, 0, 0, 0.55);
+    0 1px 1px rgba(0, 0, 0, 0.85),
+    0 1px 3px rgba(0, 0, 0, 0.55);
 }
 .amc-role {
-  font-size: 9px;
+  font-size: 6px;
   font-weight: 700;
-  letter-spacing: 1.2px;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
   color: #fff;
   margin: 0;
-  opacity: 0.9;
+  opacity: 0.85;
   text-shadow:
-    0 1px 2px rgba(0, 0, 0, 0.85),
-    0 1px 4px rgba(0, 0, 0, 0.45);
+    0 1px 1px rgba(0, 0, 0, 0.85),
+    0 1px 2px rgba(0, 0, 0, 0.45);
 }
 
-/* Even smaller on phones */
+/* Even tinier on phones */
 @media (max-width: 600px) {
-  .amc-overlay { bottom: var(--sp-md); gap: 2px; }
-  .amc-logo { width: 36px; height: 36px; padding: 2px; }
-  .amc-company { font-size: 11px; }
-  .amc-role { font-size: 8px; letter-spacing: 1px; }
+  .amc-overlay { bottom: 6px; gap: 0; }
+  .amc-logo { width: 16px; height: 16px; padding: 1px; }
+  .amc-company { font-size: 7px; }
+  .amc-role { font-size: 5px; letter-spacing: 0.6px; }
 }
 
 /* ============================================================
